@@ -1,8 +1,8 @@
-#Discord Webhook sending
+# Discord Webhook sending
 ![version](https://img.shields.io/npm/v/discord-webhook-node "Version")
 ![npm](https://img.shields.io/npm/dt/discord-webhook-node.svg "Total Downloads")
 
-#How to use
+# How to use
 
 Basic use:
 ```js
@@ -45,9 +45,9 @@ const hook = new webhook.Webhook({
 });
 ```
 
-#Installation
+# Installation
 ```npm install discord-webhook-node```
 
-#License
+# License
 
 MIT
