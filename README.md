@@ -79,6 +79,8 @@ const hook = new webhook.Webhook("YOUR WEBHOOK URL");
 })();
 ```
 
+By default, it will handle Discord's rate limiting, and if there is an error sending the message (other than rate limiting), an error will be thrown. You can change these options with the custom settings options below.
+
 ## Custom settings:
 ```js
 const webhook = require('discord-webhook-node');
