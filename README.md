@@ -29,9 +29,53 @@ const embed = new webhook.messageBuilder()
 .setImage('https://cdn.discordapp.com/embed/avatars/0.png')
 .setFooter('Hey its a footer', 'https://cdn.discordapp.com/embed/avatars/0.png')
 .setTimestamp();
+
+hook.send(embed);
 ```
 
 Keep in mind that the custom embed method `setColor` takes in a decimal color. You can convert hex colors to decimal using this website here: [https://convertingcolors.com](https://convertingcolors.com)
+
+Preset messages:
+```js
+const webhook = require('discord-webhook-node');
+const hook = new webhook.Webhook('YOUR WEBHOOK URL');
+
+//Sends an information message
+hook.info('**Information hook**', 'Information field title here', 'Information field value here');
+
+//Sends a success message
+hook.success('**Success hook**', 'Success field title here', 'Success field value here');
+
+//Sends an error message
+hook.error('**Error hook**', 'Error field title here', 'Error field value here');
+```
+
+discord-webhook-node is a promise based library, which means you can use `.catch`, `.then`, and `await`, although if successful will not return any values. For example:
+
+```js
+const webhook = require('discord-webhook-node');
+const hook = new webhook.Webhook("YOUR WEBHOOK URL");
+
+hook.send("Hello there!")
+.then(() => console.log('Sent webhook successfully!'))
+.catch(err => console.log(err.message));
+```
+
+or using async:
+```js
+const webhook = require('discord-webhook-node');
+const hook = new webhook.Webhook("YOUR WEBHOOK URL");
+
+(async () => {
+    try {
+        await hook.send('Hello there!');
+        console.log('Successfully sent webhook!');
+    }
+    catch(e){
+        console.log(e.message);
+    };
+})();
+```
 
 Custom settings:
 ```js
