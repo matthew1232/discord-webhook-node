@@ -6,7 +6,7 @@
 
 # How to use
 
-Basic use:
+## Basic use:
 ```js
 const webhook = require('discord-webhook-node');
 const hook = new webhook.Webhook("YOUR WEBHOOK URL");
@@ -14,7 +14,7 @@ const hook = new webhook.Webhook("YOUR WEBHOOK URL");
 hook.send("Hello there!");
 ```
 
-Custom embeds:
+## Custom embeds:
 ```js
 const webhook = require('discord-webhook-node');
 const hook = new webhook.Webhook("YOUR WEBHOOK URL");
@@ -37,7 +37,7 @@ hook.send(embed);
 
 Keep in mind that the custom embed method `setColor` takes in a decimal color. You can convert hex colors to decimal using this website here: [https://convertingcolors.com](https://convertingcolors.com)
 
-Preset messages:
+## Preset messages:
 ```js
 const webhook = require('discord-webhook-node');
 const hook = new webhook.Webhook('YOUR WEBHOOK URL');
