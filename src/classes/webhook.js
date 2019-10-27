@@ -1,4 +1,5 @@
 const sendWebhook = require('../sendWebhook');
+const messageBuilder = require('./messageBuilder');
 
 module.exports = class webhook {
     constructor(options){
@@ -32,4 +33,43 @@ module.exports = class webhook {
             if (this.throwErrors) throw new Error(err.message);
         };
     };
+
+    info(title, fieldName, fieldValue, inline){
+        const embed = new messageBuilder()
+        .setTitle(title)
+        .setTimestamp()
+        .setColor(4037805);
+
+        if (fieldName != undefined && fieldValue != undefined){
+            embed.addField(fieldName, fieldValue, inline)
+        };        
+        
+        this.send(embed);
+    };
+
+    success(title, fieldName, fieldValue, inline){
+        const embed = new messageBuilder()
+        .setTitle(title)
+        .setTimestamp()
+        .setColor(65340);
+
+        if (fieldName != undefined && fieldValue != undefined){
+            embed.addField(fieldName, fieldValue, inline)
+        };
+
+        this.send(embed);
+    }
+
+    error(title, fieldName, fieldValue, inline){
+        const embed = new messageBuilder()
+        .setTitle(title)
+        .setTimestamp()
+        .setColor(16729149);
+
+        if (fieldName != undefined && fieldValue != undefined){
+            embed.addField(fieldName, fieldValue, inline)
+        };
+
+        this.send(embed);
+    }
 };
