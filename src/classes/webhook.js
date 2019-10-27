@@ -59,6 +59,20 @@ module.exports = class webhook {
 
         this.send(embed);
     }
+    
+    warning(title, fieldName, fieldValue, inline){
+        const embed = new messageBuilder()
+        .setTitle(title)
+        .setTimestamp()
+        .setColor(16763904);
+
+        if (fieldName != undefined && fieldValue != undefined){
+            embed.addField(fieldName, fieldValue, inline)
+        };
+
+        this.send(embed);
+    }
+
 
     error(title, fieldName, fieldValue, inline){
         const embed = new messageBuilder()
