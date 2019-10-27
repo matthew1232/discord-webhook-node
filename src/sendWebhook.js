@@ -1,4 +1,3 @@
-const request = require('request-promise');
 const fetch = require('node-fetch');
 
 module.exports = (hookURL, content) => new Promise((resolve, reject) => {
