@@ -51,7 +51,7 @@ hook.success('**Success hook**', 'Success field title here', 'Success field valu
 //Sends an error message
 hook.error('**Error hook**', 'Error field title here', 'Error field value here');
 ```
-
+## Notes
 discord-webhook-node is a promise based library, which means you can use `.catch`, `.then`, and `await`, although if successful will not return any values. For example:
 
 ```js
@@ -79,7 +79,7 @@ const hook = new webhook.Webhook("YOUR WEBHOOK URL");
 })();
 ```
 
-Custom settings:
+## Custom settings:
 ```js
 const webhook = require('discord-webhook-node');
 const hook = new webhook.Webhook({
