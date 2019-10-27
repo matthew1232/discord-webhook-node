@@ -48,6 +48,9 @@ hook.info('**Information hook**', 'Information field title here', 'Information f
 //Sends a success message
 hook.success('**Success hook**', 'Success field title here', 'Success field value here');
 
+//Sends an warning message
+hook.warning('**Warning hook**', 'Warning field title here', 'Warning field value here');
+
 //Sends an error message
 hook.error('**Error hook**', 'Error field title here', 'Error field value here');
 ```
