@@ -1,4 +1,4 @@
-module.exports = class messageBuilder {
+module.exports = class MessageBuilder {
     constructor(){
         this.payload = {
             embeds: [{fields: []}]
@@ -13,44 +13,52 @@ module.exports = class messageBuilder {
         this.payload.embeds[0].author = {};
         this.payload.embeds[0].author.name = author;
         this.payload.embeds[0].author.url = authorUrl;   
-        this.payload.embeds[0].author.icon_url = authorImage;   
+        this.payload.embeds[0].author.icon_url = authorImage;  
+         
         return this;
     };
     
     setTitle(title){
         this.payload.embeds[0].title = title;
+
         return this;
     };
 
     setURL(url){
         this.payload.embeds[0].url = url;
+
         return this;
     };
 
     setThumbnail(thumbnail){
         this.payload.embeds[0].thumbnail = {};
         this.payload.embeds[0].thumbnail.url = thumbnail;
+
         return this;
     };
 
     setImage(image){
         this.payload.embeds[0].image = {};
         this.payload.embeds[0].image.url = image;
+
         return this;
     };
 
     setTimestamp(){
         this.payload.embeds[0].timestamp = new Date();
+
         return this;
     };
 
     setColor(color){
         this.payload.embeds[0].color = color;
+
         return this;
     };
 
     setDescription(description){
         this.payload.embeds[0].description = description;
+
         return this;
     };
 
@@ -60,6 +68,7 @@ module.exports = class messageBuilder {
             value: fieldValue,
             inline: inline
         });
+
         return this;
     };
 
@@ -67,6 +76,7 @@ module.exports = class messageBuilder {
         this.payload.embeds[0].footer = {};
         this.payload.embeds[0].footer.icon_url = footerImage;
         this.payload.embeds[0].footer.text = footer;
+
         return this;
     };
 };

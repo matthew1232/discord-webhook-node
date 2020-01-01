@@ -1,7 +1,7 @@
 const { sendWebhook, sendFile } = require('../api');
-const messageBuilder = require('./messageBuilder');
+const MessageBuilder = require('./MessageBuilder');
 
-module.exports = class webhook {
+module.exports = class Webhook {
     constructor(options){
         if (typeof options == 'string'){
             this.hookURL = options;
@@ -48,7 +48,7 @@ module.exports = class webhook {
     };
 
     info(title, fieldName, fieldValue, inline){
-        const embed = new messageBuilder()
+        const embed = new MessageBuilder()
         .setTitle(title)
         .setTimestamp()
         .setColor(4037805);
@@ -61,7 +61,7 @@ module.exports = class webhook {
     };
 
     success(title, fieldName, fieldValue, inline){
-        const embed = new messageBuilder()
+        const embed = new MessageBuilder()
         .setTitle(title)
         .setTimestamp()
         .setColor(65340);
@@ -74,7 +74,7 @@ module.exports = class webhook {
     }
     
     warning(title, fieldName, fieldValue, inline){
-        const embed = new messageBuilder()
+        const embed = new MessageBuilder()
         .setTitle(title)
         .setTimestamp()
         .setColor(16763904);
@@ -88,7 +88,7 @@ module.exports = class webhook {
 
 
     error(title, fieldName, fieldValue, inline){
-        const embed = new messageBuilder()
+        const embed = new MessageBuilder()
         .setTitle(title)
         .setTimestamp()
         .setColor(16729149);
