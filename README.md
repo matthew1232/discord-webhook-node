@@ -16,10 +16,10 @@ hook.send("Hello there!");
 
 ## Custom embeds:
 ```js
-const webhook = require('discord-webhook-node');
-const hook = new webhook.Webhook("YOUR WEBHOOK URL");
+const { Webhook, MessageBuilder } = require('discord-webhook-node');
+const hook = new Webhook("YOUR WEBHOOK URL");
 
-const embed = new webhook.messageBuilder()
+const embed = new MessageBuilder()
 .setTitle('My title here')
 .setAuthor('Author here', 'https://cdn.discordapp.com/embed/avatars/0.png', 'https://www.google.com')
 .setURL('https://www.google.com')
@@ -37,10 +37,18 @@ hook.send(embed);
 
 Keep in mind that the custom embed method `setColor` takes in a decimal color. You can convert hex colors to decimal using this website here: [https://convertingcolors.com](https://convertingcolors.com)
 
+## Sending files:
+```js
+const { Webhook } = require('discord-webhook-node');
+const hook = new Webhook('YOUR WEBHOOK URL');
+
+hook.sendFile('../yourfilename.png');
+```
+
 ## Preset messages:
 ```js
-const webhook = require('discord-webhook-node');
-const hook = new webhook.Webhook('YOUR WEBHOOK URL');
+const { Webhook } = require('discord-webhook-node');
+const hook = new Webhook('YOUR WEBHOOK URL');
 
 //Sends an information message
 hook.info('**Information hook**', 'Information field title here', 'Information field value here');
@@ -58,8 +66,8 @@ hook.error('**Error hook**', 'Error field title here', 'Error field value here')
 discord-webhook-node is a promise based library, which means you can use `.catch`, `.then`, and `await`, although if successful will not return any values. For example:
 
 ```js
-const webhook = require('discord-webhook-node');
-const hook = new webhook.Webhook("YOUR WEBHOOK URL");
+const { Webhook } = require('discord-webhook-node');
+const hook = new Webhook("YOUR WEBHOOK URL");
 
 hook.send("Hello there!")
 .then(() => console.log('Sent webhook successfully!'))
@@ -68,8 +76,8 @@ hook.send("Hello there!")
 
 or using async:
 ```js
-const webhook = require('discord-webhook-node');
-const hook = new webhook.Webhook("YOUR WEBHOOK URL");
+const { Webhook } = require('discord-webhook-node');
+const hook = new Webhook("YOUR WEBHOOK URL");
 
 (async () => {
     try {
@@ -86,8 +94,8 @@ By default, it will handle Discord's rate limiting, and if there is an error sen
 
 ## Custom settings:
 ```js
-const webhook = require('discord-webhook-node');
-const hook = new webhook.Webhook({
+const { Webhook } = require('discord-webhook-node');
+const hook = new Webhook({
     url: "YOUR WEBHOOK URL",
     //If throwErrors is set to false, no errors will be thrown if there is an error sending
     throwErrors: false,

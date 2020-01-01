@@ -1,4 +1,4 @@
-const sendWebhook = require('../sendWebhook');
+const { sendWebhook, sendFile } = require('../api');
 const messageBuilder = require('./messageBuilder');
 
 module.exports = class webhook {
@@ -14,6 +14,19 @@ module.exports = class webhook {
             this.retryOnLimit = options.retryOnLimit == undefined ? true : options.retryOnLimit;
         };
     };
+
+    async sendFile(filePath){
+        try {
+            const res = await sendFile(this.hookURL, filePath);
+
+            if (res.statusCode != 200){
+                throw new Error(`Error sending webhook: ${res.statusCode} status code. Response: ${await res.text()}`);
+            };
+        }
+        catch(err){
+            if (this.throwErrors) throw new Error(err.message);
+        };
+    }
 
     async send(payload){
         try {

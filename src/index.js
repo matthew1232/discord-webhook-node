@@ -1,7 +1,7 @@
-const Webhook = require('./classes/webhook');
-const messageBuilder = require('./classes/messageBuilder');
+const Webhook = require('./classes/Webhook');
+const MessageBuilder = require('./classes/MessageBuilder');
 
 module.exports = {
     Webhook,
-    messageBuilder
+    MessageBuilder
 };

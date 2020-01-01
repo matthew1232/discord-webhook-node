@@ -15,6 +15,7 @@
   ],
   "homepage": "https://github.com/matthew1232/discord-webhook-node#readme",
   "dependencies": {
+    "form-data": "^3.0.0",
     "node-fetch": "^2.6.0"
   }
 }
