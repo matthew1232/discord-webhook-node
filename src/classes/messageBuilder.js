@@ -9,6 +9,12 @@ module.exports = class MessageBuilder {
         return this.payload;
     };
 
+    setText(text){
+        this.payload.content = text;
+
+        return this;
+    }
+
     setAuthor(author, authorImage, authorUrl){
         this.payload.embeds[0].author = {};
         this.payload.embeds[0].author.name = author;
