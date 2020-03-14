@@ -23,7 +23,7 @@ module.exports = class MessageBuilder {
          
         return this;
     };
-    
+
     setTitle(title){
         this.payload.embeds[0].title = title;
 

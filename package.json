@@ -4,7 +4,7 @@
   "description": "Allows for easy webhook sending through discord's webhook API",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests/index.js"
   },
   "author": "Matthew Mulfinger",
   "license": "MIT",
@@ -17,5 +17,8 @@
   "dependencies": {
     "form-data": "^3.0.0",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
   }
 }

@@ -1,8 +1,6 @@
 const fetch = require('node-fetch');
 
-module.exports = (hookURL, content) => new Promise((resolve, reject) => {
-    const payload = typeof content == 'string' ? {content: content} : content.getJSON();
-
+module.exports = (hookURL, payload) => new Promise((resolve, reject) => {
     fetch(hookURL, {
         method: 'post',
         headers: {
