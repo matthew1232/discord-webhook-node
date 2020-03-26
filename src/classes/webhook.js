@@ -1,5 +1,5 @@
 const { sendWebhook, sendFile } = require('../api');
-const MessageBuilder = require('./MessageBuilder');
+const MessageBuilder = require('./messageBuilder');
 
 module.exports = class Webhook {
     constructor(options){
