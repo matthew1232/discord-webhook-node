@@ -46,7 +46,7 @@ declare module "discord-webook-node" {
       url?: string;
     };
     image?: {
-      url: string;
+      url?: string;
     };
     timestamp?: Date;
     color?: number;
