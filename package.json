@@ -1,6 +1,6 @@
 {
   "name": "discord-webhook-node",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Allows for easy webhook sending through discord's webhook API",
   "main": "src/index.js",
   "typings": "index.d.ts",
