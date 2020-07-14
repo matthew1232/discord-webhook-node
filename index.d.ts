@@ -16,6 +16,12 @@ export class Webhook {
     fieldValue: string,
     inline?: boolean
   ): void;
+  success(
+    title: string,
+    fieldName: string,
+    fieldValue: string,
+    inline?: boolean
+  ): void;
   warning(
     title: string,
     fieldName: string,
