@@ -7,14 +7,15 @@
 - [Installation](#installation)
 - [Examples](#examples)
     - [Basic use](#basic-use)
-    - [Custom embeds](#cutom-embeds)
+    - [Custom embeds](#custom-embeds)
     - [Sending files](#sending-files)
     - [Preset messages](#preset-messages)
-    - [Notes](#notes)
     - [Custom settings](#custom-settings)
+- [Notes](#notes)
 - [API](#api)
-    - [Webhook](#webhook)
-    - [MessageBuilder](#message-builder)
+    - [Webhook](#webhook---class)
+    - [MessageBuilder](#messagebuilder---class)
+- [License](#license)
 
 # Installation
 ```npm install discord-webhook-node``` or ```yarn add discord-webhook-node```
