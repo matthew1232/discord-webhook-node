@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "typings": "index.d.ts",
   "scripts": {
-    "test": "node tests/index.js"
+    "test": "mocha --timeout 50000"
   },
   "author": "Matthew Mulfinger",
   "license": "MIT",
@@ -20,6 +20,7 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "mocha": "^8.0.1"
   }
 }

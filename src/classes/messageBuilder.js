@@ -1,3 +1,5 @@
+const { formatColor } = require('../utils');
+
 module.exports = class MessageBuilder {
     constructor(){
         this.payload = {
@@ -50,14 +52,19 @@ module.exports = class MessageBuilder {
         return this;
     };
 
-    setTimestamp(){
-        this.payload.embeds[0].timestamp = new Date();
+    setTimestamp(date){
+        if (date){
+            this.payload.embeds[0].timestamp = date;
+        }
+        else {
+            this.payload.embeds[0].timestamp = new Date();
+        };
 
         return this;
     };
 
     setColor(color){
-        this.payload.embeds[0].color = color;
+        this.payload.embeds[0].color = formatColor(color);
 
         return this;
     };

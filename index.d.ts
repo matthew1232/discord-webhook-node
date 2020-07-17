@@ -12,28 +12,28 @@ export class Webhook {
   send(message: MessageBuilder | string): Promise<void>;
   info(
     title: string,
-    fieldName: string,
-    fieldValue: string,
+    fieldName?: string,
+    fieldValue?: string,
     inline?: boolean
-  ): void;
+  ): Promise<void>;
   success(
     title: string,
-    fieldName: string,
-    fieldValue: string,
+    fieldName?: string,
+    fieldValue?: string,
     inline?: boolean
-  ): void;
+  ): Promise<void>;
   warning(
     title: string,
-    fieldName: string,
-    fieldValue: string,
+    fieldName?: string,
+    fieldValue?: string,
     inline?: boolean
-  ): void;
+  ): Promise<void>;
   error(
     title: string,
-    fieldName: string,
-    fieldValue: string,
+    fieldName?: string,
+    fieldValue?: string,
     inline?: boolean
-  ): void;
+  ): Promise<void>;
 }
 
 export type WebhookField = {

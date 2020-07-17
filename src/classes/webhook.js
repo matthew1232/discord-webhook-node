@@ -19,18 +19,22 @@ module.exports = class Webhook {
 
     setUsername(username){
         this.payload.username = username;
+
+        return this;
     }
 
     setAvatar(avatarURL){
         this.payload.avatar_url = avatarURL;
+
+        return this;
     }
 
     async sendFile(filePath){
         try {
-            const res = await sendFile(this.hookURL, filePath);
+            const res = await sendFile(this.hookURL, filePath, this.payload);
 
             if (res.statusCode != 200){
-                throw new Error(`Error sending webhook: ${res.statusCode} status code. Response: ${await res.text()}`);
+                throw new Error(`Error sending webhook: ${res.statusCode} status code.`);
             };
         }
         catch(err){
@@ -71,7 +75,7 @@ module.exports = class Webhook {
         };
     };
 
-    info(title, fieldName, fieldValue, inline){
+    async info(title, fieldName, fieldValue, inline){
         const embed = new MessageBuilder()
         .setTitle(title)
         .setTimestamp()
@@ -81,10 +85,10 @@ module.exports = class Webhook {
             embed.addField(fieldName, fieldValue, inline)
         };        
         
-        this.send(embed);
+        await this.send(embed);
     };
 
-    success(title, fieldName, fieldValue, inline){
+    async success(title, fieldName, fieldValue, inline){
         const embed = new MessageBuilder()
         .setTitle(title)
         .setTimestamp()
@@ -94,10 +98,10 @@ module.exports = class Webhook {
             embed.addField(fieldName, fieldValue, inline)
         };
 
-        this.send(embed);
+        await this.send(embed);
     }
     
-    warning(title, fieldName, fieldValue, inline){
+    async warning(title, fieldName, fieldValue, inline){
         const embed = new MessageBuilder()
         .setTitle(title)
         .setTimestamp()
@@ -107,11 +111,11 @@ module.exports = class Webhook {
             embed.addField(fieldName, fieldValue, inline)
         };
 
-        this.send(embed);
+        await this.send(embed);
     }
 
 
-    error(title, fieldName, fieldValue, inline){
+    async error(title, fieldName, fieldValue, inline){
         const embed = new MessageBuilder()
         .setTitle(title)
         .setTimestamp()
@@ -121,6 +125,6 @@ module.exports = class Webhook {
             embed.addField(fieldName, fieldValue, inline)
         };
 
-        this.send(embed);
+        await this.send(embed);
     }
 };
