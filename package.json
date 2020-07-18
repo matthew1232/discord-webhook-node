@@ -2,7 +2,8 @@
   "name": "discord-webhook-node",
   "version": "1.1.6",
   "description": "Allows for easy webhook sending through discord's webhook API",
-  "main": "src/index.js",
+  "main": "./src/index.js",
+  "exports": "./src/index.mjs",
   "typings": "index.d.ts",
   "scripts": {
     "test": "mocha --timeout 50000"
