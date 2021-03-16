@@ -9,11 +9,13 @@ module.exports = class Webhook {
             this.hookURL = options;
             this.throwErrors = true;
             this.retryOnLimit = true;
+            this.proxy = undefined;
         }
         else {
             this.hookURL = options.url;
             this.throwErrors = options.throwErrors == undefined ? true : options.throwErrors;
             this.retryOnLimit = options.retryOnLimit == undefined ? true : options.retryOnLimit;
+            this.proxy = options.proxy ? options.proxy : undefined;
         };
     };
 
@@ -58,13 +60,13 @@ module.exports = class Webhook {
         };
 
         try {
-            const res = await sendWebhook(this.hookURL, endPayload);
+            const res = await sendWebhook(this.hookURL, endPayload, this.proxy);
 
             if (res.status == 429 && this.retryOnLimit){
                 const body = await res.json();
                 const waitUntil = body["retry_after"];
 
-                setTimeout(() => sendWebhook(this.hookURL, endPayload), waitUntil);
+                setTimeout(() => sendWebhook(this.hookURL, endPayload, this.proxy), waitUntil);
             }
             else if (res.status != 204){
                 throw new Error(`Error sending webhook: ${res.status} status code. Response: ${await res.text()}`);
