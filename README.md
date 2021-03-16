@@ -91,7 +91,10 @@ const hook = new Webhook({
     //If throwErrors is set to false, no errors will be thrown if there is an error sending
     throwErrors: false,
     //retryOnLimit gives you the option to not attempt to send the message again if rate limited
-    retryOnLimit: false
+    retryOnLimit: false,
+    //If a HTTP proxy is proxy, it will send the hook via that proxy
+    //Use the format, "ip:port", for IP-based authentication proxies or username:password@ip:port
+    proxy: "123.456.789.10:1112"
 });
 
 hook.setUsername('Username'); //Overrides the default webhook username
@@ -134,6 +137,7 @@ Constructor
 - options (optional) : object
     - throwErrors (optional) : boolean
     - retryOnLimit (optional) : boolean
+    - proxy (optional) : string
 
 Methods
 - setUsername(username : string) returns this
@@ -144,7 +148,7 @@ Methods
 - async success(title : string, fieldName (optional) : string, fieldValue (optional) : string, inline (optional) : boolean)
 - async warning(title : string, fieldName (optional) : string, fieldValue (optional) : string, inline (optional) : boolean)
 - async error(title : string, fieldName (optional) : string, fieldValue (optional) : string, inline (optional) : boolean)
-- 
+
 ## MessageBuilder - class
 Methods
 - setText(text: string)
