@@ -1,6 +1,6 @@
 {
-  "name": "discord-webhook-node",
-  "version": "1.1.8",
+  "name": "discord-webhook-sender",
+  "version": "1.1.9",
   "description": "Allows for easy webhook sending through discord's webhook API",
   "main": "./src/index.js",
   "exports": {
@@ -11,14 +11,22 @@
   "scripts": {
     "test": "mocha --timeout 50000"
   },
-  "author": "Matthew Mulfinger",
+  "author": "Matthew Mulfinger <matthew.mulfingers@gmail.com>",
+  "contributors": [
+    "Bodhi Mulders <info@bemacized.net> (https://bemacized.net)",
+    "Carbon Alabel <carbonalabel@gmail.com> (https://carbon.taabe.net)",
+    "Joey Kamsteeg <joey@kamsteegsoftware.nl> (http://www.kamsteegsoftware.nl)",
+    "lleyton <lleyton@innatical.com>",
+    "Prabhjot Singh <prince112592@yahoo.com>",
+    "Ali <contact@xetera.dev> (https://xetera.dev)"
+  ],
   "license": "MIT",
   "keywords": [
     "Webhook",
     "Discord",
     "Bot"
   ],
-  "homepage": "https://github.com/matthew1232/discord-webhook-node#readme",
+  "homepage": "https://github.com/PrinceS25/discord-webhook-sender",
   "dependencies": {
     "form-data": "^3.0.0",
     "https-proxy-agent": "^5.0.0",
