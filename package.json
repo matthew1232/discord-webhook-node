@@ -1,6 +1,6 @@
 {
-  "name": "discord-webhook-sender",
-  "version": "1.1.9",
+  "name": "@prince25/discord-webhook-sender",
+  "version": "1.2.0",
   "description": "Allows for easy webhook sending through discord's webhook API",
   "main": "./src/index.js",
   "exports": {
