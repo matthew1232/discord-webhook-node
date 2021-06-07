@@ -84,4 +84,5 @@ export class MessageBuilder {
   setDescription(description: string): this;
   addField(fieldName: string, fieldValue: string, inline?: boolean): this;
   setFooter(footer: string, footerImage?: string): this;
+  setAuthor(name: string, iconUrl?: string, url?: string): this;
 }
