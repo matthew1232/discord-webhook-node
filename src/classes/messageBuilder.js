@@ -92,4 +92,13 @@ module.exports = class MessageBuilder {
 
         return this;
     };
+    
+    setAuthor(name, iconUrl, url) {
+        this.payload.embeds[0].author = {};
+        this.payload.embeds[0].author.name = name;
+        this.payload.embeds[0].author.iconURL = iconUrl;
+        this.payload.embeds[0].author.url = url;
+        
+        return this;
+    }
 };
